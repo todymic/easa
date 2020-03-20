@@ -30,7 +30,7 @@ class UserControllerTest extends WebTestCase
     {
         $this->logIn();
 
-        $crawler = $this->client->request('GET', '/user');
+        $crawler = $this->client->request('GET', '/user/1');
 
         $response = $this->client->getResponse();
         $this->assertSame(Response::HTTP_OK, $response->getStatusCode());
@@ -46,7 +46,7 @@ class UserControllerTest extends WebTestCase
 
         $user = $manager->getRepository(User::class)->findOneByEmail('t@t.t');
 
-        $token = new UsernamePasswordToken($user, $user->getPassword(), $firewallName, ['ROLE_USER']);
+        $token = new UsernamePasswordToken($user, 'test', $firewallName, ['ROLE_USER']);
         $session->set('_security_'.$firewallContext, serialize($token));
         $session->save();
 
