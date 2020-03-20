@@ -30,7 +30,7 @@ class UserControllerTest extends WebTestCase
     {
         $this->logIn();
 
-        $crawler = $this->client->request('GET', '/user/');
+        $crawler = $this->client->request('GET', '/user');
 
         $response = $this->client->getResponse();
         $this->assertSame(Response::HTTP_OK, $response->getStatusCode());
