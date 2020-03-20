@@ -12,7 +12,7 @@ class UserControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/user');
 
-        $this->assertSame(303, $client->getResponse()->getStatusCode());
+        $this->assertSame(302, $client->getResponse()->getStatusCode());
     }
 
 }
