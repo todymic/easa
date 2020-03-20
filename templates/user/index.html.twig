@@ -34,6 +34,6 @@
     </table>
 
     {% if is_granted("ROLE_ADMIN") %}
-        <a href="{{ path('user_new') }}">{{ 'link.create.user'|trans }}</a>
+        <a href="{{ path('user_new') }}">{{ 'link.create.user'|trans  }}</a>
     {% endif %}
 {% endblock %}
