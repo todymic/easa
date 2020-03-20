@@ -1,0 +1,84 @@
+
+.dropdown .dropdown-menu.dropdown-info .dropdown-item:hover, .dropdown .dropdown-menu.dropdown-info .dropdown-item:active {
+  background-color: $default-color-dark !important;
+  border-radius: .125rem;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+  &:hover, &:active {
+    background-color: #4285f4;
+    border-radius: .125rem;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+  }
+}
+
+.dropdown .dropdown-menu .dropdown-item:active {
+  background-color: #757575;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover, .dropdown .dropdown-menu .dropdown-item:active {
+  color: #fff !important;
+}
+
+.navbar .dropdown-menu a:not(.active) {
+  color: #000;
+}
+
+a.waves-effect, a.waves-light {
+  display: inline-block;
+}
+.dropdown .dropdown-menu .dropdown-item, .dropup .dropdown-menu .dropdown-item, .dropleft .dropdown-menu .dropdown-item, .dropright .dropdown-menu .dropdown-item {
+  padding: .5rem;
+  margin-left: 0;
+  font-size: .9rem;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.waves-effect {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a.waves-effect, a.waves-light {
+  display: inline-block;
+}
+
+  .navbar .dropdown-menu a {
+  padding: 10px;
+  font-size: .9375rem;
+  font-weight: 300;
+}
+
+.navbar-nav .dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown .dropdown-menu, .dropup .dropdown-menu, .dropleft .dropdown-menu, .dropright .dropdown-menu {
+  padding: .5rem;
+}
+.navbar .dropdown-menu {
+  position: absolute !important;
+  margin-top: 0;
+}
+.navbar {
+  font-weight: 300;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
