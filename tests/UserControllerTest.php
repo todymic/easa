@@ -34,7 +34,6 @@ class UserControllerTest extends WebTestCase
 
         $response = $this->client->getResponse();
         $this->assertSame(Response::HTTP_OK, $response->getStatusCode());
-        //$this->assertSame('Admin Dashboard', $crawler->filter('h1')->text());
     }
 
     private function logIn()
