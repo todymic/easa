@@ -14,6 +14,7 @@ import '@fortawesome/fontawesome-free/js/all';
 
 import 'mdbootstrap/js/popper';
 import 'mdbootstrap/js/bootstrap';
-import 'mdbootstrap/js/mdb';
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+import './tooltip';
+
+import 'mdbootstrap/js/mdb';

@@ -8,81 +8,95 @@
         {% endblock %}
     </head>
     <body>
-        <!--Navbar-->
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color-dark lighten-3">
+        <header class="mb-5">
+            <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color-dark lighten-3">
 
-            <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">E-asa</a>
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">E-asa</a>
 
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="basicExampleNav">
-
-                <!-- Links -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-
-                </ul>
-                <!-- Links -->
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
-                        aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-                    <ul class="navbar-nav ml-auto ">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user"></i> Profile </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                                <a class="dropdown-item" href="#">My account</a>
-                                <a class="dropdown-item" href="#">Log out</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Collapsible content -->
 
-        </nav>
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                    <!-- Links -->
+                    {#                <ul class="navbar-nav mr-auto">#}
+                    {#                    <li class="nav-item active">#}
+                    {#                        <a class="nav-link" href="#">Home#}
+                    {#                            <span class="sr-only">(current)</span>#}
+                    {#                        </a>#}
+                    {#                    </li>#}
+                    {#                    <li class="nav-item">#}
+                    {#                        <a class="nav-link" href="#">Features</a>#}
+                    {#                    </li>#}
+                    {#                    <li class="nav-item">#}
+                    {#                        <a class="nav-link" href="#">Pricing</a>#}
+                    {#                    </li>#}
+
+                    {#                    <!-- Dropdown -->#}
+                    {#                    <li class="nav-item dropdown">#}
+                    {#                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"#}
+                    {#                           aria-haspopup="true" aria-expanded="false">Dropdown</a>#}
+                    {#                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">#}
+                    {#                            <a class="dropdown-item" href="#">Action</a>#}
+                    {#                            <a class="dropdown-item" href="#">Another action</a>#}
+                    {#                            <a class="dropdown-item" href="#">Something else here</a>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+
+                    {#                </ul>               <!-- Links -->#}
+
+
+                    {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+                                aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                            <ul class="navbar-nav ml-auto ">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-user"></i> Profile </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                                        <a class="dropdown-item" href="#">My account</a>
+                                        <a class="dropdown-item" href="{{ path('app_logout') }}"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_login') }}"> Connexion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">S'inscrire</a>
+                            </li>
+                        </ul>
+                    {% endif %}
+                </div>
+                <!-- Collapsible content -->
+
+            </nav>
+        </header>
+        <!--Navbar-->
+
         <!--/.Navbar-->
         {% block header %}{% endblock %}
         {% block body %}
             <div class="container">
-                {% block content %}
-                {% endblock %}
+                    {% block content %}
+                    {% endblock %}
             </div>
         {% endblock %}
         {% block footer %}
             <!-- Footer -->
-            <footer class="page-footer font-small default-color-dark lighten-3 pt-4">
+            <footer class="page-footer font-small default-color-dark lighten-3 pt-4 mt-5">
 
                 <div class="container-fluid text-center text-md-left">
 

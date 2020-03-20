@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block content %}
+    <div class="w-50 mx-auto">
+        <form class="border border-light p-5" method="post">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            {% endif %}
+
+            <p class="h4 mb-4 text-center">{{ 'form.sign.in'|trans }}</p>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-4" placeholder="{{ 'form.input.email'|trans }}" required autofocus />
+            <input type="password" name="password" id="inputPassword" class="form-control mb-4" placeholder=" {{ 'form.input.password'|trans }}" required />
+
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            >
+            <div class="d-flex justify-content-between">
+                <div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" name="_remember_me" class="custom-control-input" id="defaultLoginFormRemember">
+                        <label class="custom-control-label" for="defaultLoginFormRemember"> {{ 'form.label.remember_me'|trans }}</label>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">{{ 'form.link.forgot_password'|trans }}</a>
+                </div>
+            </div>
+
+            <button class="btn btn-info btn-block my-4" type="submit">{{ 'form.submit.login'|trans }}</button>
+
+            <div class="text-center">
+                <p>{{ 'form.text.not_membre'|trans }}
+                    <a href="#">{{ 'form.link.register'|trans }}</a>
+                </p>
+
+                <p>{{ 'form.text.sign_with'|trans }}:</p>
+                <a type="button" class="light-blue-text mx-2" data-toggle="tooltip" title="{{ 'form.link.facebook'|trans }}">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a type="button" class="light-blue-text mx-2" data-toggle="tooltip" title="{{ 'form.link.gmail'|trans }}">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a type="button" class="light-blue-text mx-2" data-toggle="tooltip" title="{{ 'form.link.linkdin'|trans }}">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a type="button" class="light-blue-text mx-2" data-toggle="tooltip" title="{{ 'form.link.github'|trans }}">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

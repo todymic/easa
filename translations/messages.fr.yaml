@@ -1,0 +1,20 @@
+form:
+  sign:
+    in: "Connectez-vous"
+  input:
+    email: 'E-mail'
+    password: 'Mot de passe'
+  label:
+    remember_me: 'Se souvenir de moi'
+  link:
+    forgot_password: 'Mot de passe oublié?'
+    register: 'Inscrivez-vous'
+    facebook: 'Facebook'
+    gmail: 'Gmail'
+    github: 'Github'
+    linkdin: 'Linkdin'
+  submit:
+    login: 'Connexion'
+  text:
+    not_membre: 'Pas encore inscrit?'
+    sign_with: 'ou se connecter avec'
