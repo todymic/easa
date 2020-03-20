@@ -1,4 +1,16 @@
 {
+    "behat/behat": {
+        "version": "v3.6.1"
+    },
+    "behat/gherkin": {
+        "version": "v4.6.2"
+    },
+    "behat/transliterator": {
+        "version": "v1.3.0"
+    },
+    "container-interop/container-interop": {
+        "version": "1.2.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {

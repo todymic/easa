@@ -6,12 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class UserControllerTest extends WebTestCase
 {
-    public function testSomething()
+    public function testRestrictedWithUnauthorizedUserArea()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/');
 
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Hello World');
+        $crawler = $client->request('GET', '/user');
+
+        $this->assertSame(302, $client->getResponse()->getStatusCode());
     }
+
 }
