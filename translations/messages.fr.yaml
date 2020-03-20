@@ -13,8 +13,19 @@ form:
     gmail: 'Gmail'
     github: 'Github'
     linkdin: 'Linkdin'
+    logout: 'Se déconnecter'
   submit:
     login: 'Connexion'
+    logout: 'Déconnexion'
   text:
     not_membre: 'Pas encore inscrit?'
     sign_with: 'ou se connecter avec'
+link:
+  user:
+    profil: 'Mon Profil'
+  register: "S'inscrire"
+  sign:
+    out: 'Déconnexion'
+    in: 'Connexion'
+  create:
+    user: 'Créer nouvel utilisateur'

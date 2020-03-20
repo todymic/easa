@@ -19,9 +19,14 @@ class UserController extends AbstractController
 {
     /**
      * @Route("/", name="user_index", methods={"GET"})
+     * @param UserRepository $userRepository
+     * @return Response
      */
     public function index(UserRepository $userRepository): Response
     {
+        //$this->denyAccessUnlessGranted("ROLE_ADMIN");
+
+
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
@@ -75,6 +80,8 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user): Response
     {
+        //$this->denyAccessUnlessGranted("EDIT", $user);
+
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
