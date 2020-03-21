@@ -16,8 +16,18 @@
             {% endif %}
 
             <p class="h4 mb-4 text-center">{{ 'form.sign.in'|trans }}</p>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-4" placeholder="{{ 'form.input.email'|trans }}" required autofocus />
-            <input type="password" name="password" id="inputPassword" class="form-control mb-4" placeholder=" {{ 'form.input.password'|trans }}" required />
+
+            <div class="md-form">
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-4"  required autofocus />
+                <label for="form1">{{ 'form.input.email'|trans }}</label>
+            </div>
+
+            <div class="md-form">
+                <input type="password" name="password" id="inputPassword" class="form-control mb-4" required />
+                <label for="form1">{{ 'form.input.password'|trans }}</label>
+            </div>
+
+
 
             <input type="hidden" name="_csrf_token"
                    value="{{ csrf_token('authenticate') }}"
@@ -34,7 +44,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-info btn-block my-4" type="submit">{{ 'form.submit.login'|trans }}</button>
+            <button class="btn btn-primary btn-block my-4 waves-effect" type="submit">{{ 'form.submit.login'|trans }}</button>
 
             <div class="text-center">
                 <p>{{ 'form.text.not_membre'|trans }}
