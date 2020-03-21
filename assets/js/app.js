@@ -20,5 +20,5 @@ import 'mdbootstrap/js/addons/datatables-select.min';
 import './tooltip';
 import './datatable';
 
-import 'mdbootstrap/js/mdb';
+// import 'mdbootstrap/js/mdb';
 
