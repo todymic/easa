@@ -26,7 +26,6 @@ class UserControllerTest extends WebTestCase
 
     public function testRestrictedWithUnauthorizedUserArea()
     {
-        $this->client = static::createClient();
 
         $crawler = $this->client->request('GET', '/user/');
 
