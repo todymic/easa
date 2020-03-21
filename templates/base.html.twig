@@ -11,7 +11,7 @@
     </head>
     <body>
         <header class="mb-5">
-            <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color-dark lighten-3">
+            <nav class="mb-1 navbar navbar-expand-lg">
 
                 <!-- Navbar brand -->
                 <a class="navbar-brand" href="#">E-asa</a>
@@ -46,9 +46,10 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('app_register') }}">{{ 'link.register'|trans }}</a>
+                                <a class="btn btn-link btn-sm" role="button" aria-pressed="true" href="#">{{ 'link.register'|trans }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('app_login') }}"> {{ 'link.sign.in'|trans }}</a>
+                                <a class="btn btn-primary btn-sm waves-effect" role="button" aria-pressed="true" href="{{ path('app_login') }}"> {{ 'link.sign.in'|trans }}</a>
                             </li>
                         </ul>
                     {% endif %}
