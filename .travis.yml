@@ -6,7 +6,7 @@ php:
 env:
   - SYMFONY_VERSION="5.0.*" DB=mysql
 before_install:
-  - mysql -e "TRUNCATE TABLE easa;"
+  - mysql -e "TRUNCATE easa;"
   - mysql -e 'CREATE DATABASE IF NOT EXISTS easa;'
 install:
   - composer install
