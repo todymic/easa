@@ -13,15 +13,22 @@ use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 class UserControllerTest extends WebTestCase
 {
     private $client;
+    /**
+     * @var \Doctrine\ORM\EntityManager|object|null
+     */
+    private $manager;
 
     public function setUp(): void
     {
         $this->client = static::createClient();
+        $this->manager = self::$kernel->getContainer()->get('doctrine.orm.entity_manager');
     }
 
     public function testRestrictedWithUnauthorizedUserArea()
     {
-        $crawler = $this->client->request('GET', '/user');
+        $this->client = static::createClient();
+
+        $crawler = $this->client->request('GET', '/user/');
 
         $this->assertSame(302, $this->client->getResponse()->getStatusCode());
     }
@@ -30,21 +37,23 @@ class UserControllerTest extends WebTestCase
     {
         $this->logIn();
 
-        $crawler = $this->client->request('GET', '/user/1');
+        $user = $this->manager->getRepository(User::class)->findOneByEmail('t@t.t');
+
+        $crawler = $this->client->request('GET', '/user/' .$user->getId());
 
         $response = $this->client->getResponse();
+
         $this->assertSame(Response::HTTP_OK, $response->getStatusCode());
     }
 
     private function logIn()
     {
         $session = self::$container->get('session');
-        $manager = self::$kernel->getContainer()->get('doctrine.orm.entity_manager');
 
         $firewallName = 'main';
         $firewallContext = 'main';
 
-        $user = $manager->getRepository(User::class)->findOneByEmail('t@t.t');
+        $user = $this->manager->getRepository(User::class)->findOneByEmail('t@t.t');
 
         $token = new UsernamePasswordToken($user, 'test', $firewallName, ['ROLE_USER']);
         $session->set('_security_'.$firewallContext, serialize($token));
