@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="w-75 mx-auto">
+    {{ form_start(registrationForm, {
+        'attr' : {
+            'class' : 'border border-light p-5'
+        }
+    }) }}
+
+        <p class="h4 mb-4 text-center"> {{ 'form.sign.up'|trans }}</p>
+
+    <div class="row">
+        <div class="col">{{ form_row(registrationForm.lastname, {
+                'label' : false
+            }) }}</div>
+        <div class="col">{{ form_row(registrationForm.firstname, {
+                'label' : false
+            }) }}</div>
+    </div>
+
+
+
+
+        {{ form_row(registrationForm.adresse, {
+            'label' : false
+        }) }}
+
+        {{ form_row(registrationForm.city, {
+            'label' : false
+        }) }}
+
+        {{ form_row(registrationForm.country, {
+            'label' : false
+        }) }}
+
+        {{ form_row(registrationForm.phone, {
+            'label' : false
+        }) }}
+
+        {{ form_row(registrationForm.email, {
+            'label' : false
+        }) }}
+
+        {{ form_row(registrationForm.plainPassword, {
+            'label' : false
+        }) }}
+
+        <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">{{ form_errors(registrationForm.plainPassword) }}</small>
+
+        <div class="custom-control custom-checkbox">
+
+            {{ form_row(registrationForm.agreeTerms, {
+                'attr': {
+                    'class' : 'custom-control-input'
+                },
+                'label_attr': {
+                    'class' : 'custom-control-label'
+                }
+            }) }}
+        </div>
+
+
+        <button class="btn btn-info my-4 btn-block" type="submit">{{ 'form.submit.signup'|trans }}</button>
+
+        <div class="text-center">
+            <p>{{ 'form.text.signup_with'|trans }}:</p>
+
+            <a type="button" class="light-blue-text mx-2">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <hr>
+
+{#            <p>By clicking#}
+{#                <em>Sign up</em> you agree to our#}
+{#                <a href="" target="_blank">terms of service</a> and#}
+{#                <a href="" target="_blank">terms of service</a>.#}
+{#            </p>#}
+        </div>
+        {{ form_end(registrationForm) }}
+</div>
+{% endblock %}
+
