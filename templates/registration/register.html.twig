@@ -1,95 +1,164 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Register{% endblock %}
-
-{% block content %}
-<div class="w-75 mx-auto">
-    {{ form_start(registrationForm, {
-        'attr' : {
-            'class' : 'border border-light p-5'
-        }
-    }) }}
-
-        <p class="h4 mb-4 text-center"> {{ 'form.sign.up'|trans }}</p>
-
-    <div class="row">
-        <div class="col">{{ form_row(registrationForm.lastname, {
-                'label' : false
-            }) }}</div>
-        <div class="col">{{ form_row(registrationForm.firstname, {
-                'label' : false
-            }) }}</div>
+{{ form_start(registrationForm) }}
+<div class="modal-body">
+    <div class="md-form form-sm mb-5">
+        <i class="fas fa-user prefix"></i>
+        {{ form_widget(registrationForm.lastname, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
+        }) }}
+        {{  form_label(registrationForm.lastname, 'form.input.lastname', {
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
+        }) }}
+    </div>
+    <div class="md-form form-sm mb-5">
+        <i class="fas fa-user prefix"></i>
+        {{ form_widget(registrationForm.firstname, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
+        }) }}
+        {{  form_label(registrationForm.firstname, 'form.input.lastname' , {
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
+        }) }}
+    </div>
+    <div class="md-form form-sm mb-5">
+        <i class="fas fa-home prefix"></i>
+        {{ form_widget(registrationForm.adresse, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
+        }) }}
+        {{  form_label(registrationForm.adresse, 'form.input.adresse',{
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
+        }) }}
+    </div>
+    <div class="md-form form-sm mb-5">
+        <i class="fas fa-city prefix"></i>
+        {{ form_widget(registrationForm.city, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
+        }) }}
+        {{  form_label(registrationForm.city, 'form.input.city',{
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
+        }) }}
+    </div>
+    <div class="md-form form-sm mb-5">
+        <i class="fas fa-user prefix"></i>
+        {{ form_widget(registrationForm.country, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
+        }) }}
+        {{  form_label(registrationForm.country, 'form.input.country', {
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
+        }) }}
+    </div>
+    <div class="md-form form-sm mb-5">
+        <i class="fas fa-phone prefix"></i>
+        {{ form_widget(registrationForm.phone, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
+        }) }}
+        {{  form_label(registrationForm.phone, 'form.input.phone', {
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
+        }) }}
     </div>
 
-
-
-
-        {{ form_row(registrationForm.adresse, {
-            'label' : false
+    <div class="md-form form-sm mb-5">
+        <i class="fas fa-envelope prefix"></i>
+        {{ form_widget(registrationForm.email, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
         }) }}
-
-        {{ form_row(registrationForm.city, {
-            'label' : false
+        {{  form_label(registrationForm.email, 'form.input.email', {
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
         }) }}
+    </div>
 
-        {{ form_row(registrationForm.country, {
-            'label' : false
+    <div class="md-form form-sm mb-5">
+        <i class="fas fa-lock prefix"></i>
+        {{ form_widget(registrationForm.plainPassword, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
         }) }}
-
-        {{ form_row(registrationForm.phone, {
-            'label' : false
+        {{  form_label(registrationForm.plainPassword, 'form.input.password', {
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
         }) }}
+    </div>
 
-        {{ form_row(registrationForm.email, {
-            'label' : false
+    <div class="md-form form-sm mb-4">
+        <i class="fas fa-lock prefix"></i>
+        <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+        <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+    </div>
+
+    <div class="md-form form-sm mb-5">
+        {{ form_widget(registrationForm.agreeTerms, {
+            'attr' : {
+                'class' : 'form-control-sm validate'
+            }
         }) }}
-
-        {{ form_row(registrationForm.plainPassword, {
-            'label' : false
+        {{  form_label(registrationForm.agreeTerms, 'form.input.agreeTerms', {
+            'label_attr': {
+                'data-error' : 'wrong',
+                'data-success' : 'right'
+            }
         }) }}
+    </div>
 
-        <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">{{ form_errors(registrationForm.plainPassword) }}</small>
+    <div class="text-center form-sm mt-2">
+        <button class="btn btn-info">{{ 'form.submit.signup'|trans }}</button>
+    </div>
 
-        <div class="custom-control custom-checkbox">
-
-            {{ form_row(registrationForm.agreeTerms, {
-                'attr': {
-                    'class' : 'custom-control-input'
-                },
-                'label_attr': {
-                    'class' : 'custom-control-label'
-                }
-            }) }}
-        </div>
-
-
-        <button class="btn btn-info my-4 btn-block" type="submit">{{ 'form.submit.signup'|trans }}</button>
-
-        <div class="text-center">
-            <p>{{ 'form.text.signup_with'|trans }}:</p>
-
-            <a type="button" class="light-blue-text mx-2">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a type="button" class="light-blue-text mx-2">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a type="button" class="light-blue-text mx-2">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a type="button" class="light-blue-text mx-2">
-                <i class="fab fa-github"></i>
-            </a>
-
-            <hr>
-
-{#            <p>By clicking#}
-{#                <em>Sign up</em> you agree to our#}
-{#                <a href="" target="_blank">terms of service</a> and#}
-{#                <a href="" target="_blank">terms of service</a>.#}
-{#            </p>#}
-        </div>
-        {{ form_end(registrationForm) }}
 </div>
-{% endblock %}
+<!--Footer-->
+<div class="modal-footer">
+    <div class="options text-right">
+        <p class="pt-1">{{ 'form.text.already_member'|trans }} <a href="#" class="blue-text">{{ 'form.link.here'|trans }}</a></p>
+    </div>
+{#    <p>{{ 'form.text.signup_with'|trans }}:</p>#}
 
+{#    <a type="button" class="light-blue-text mx-2">#}
+{#        <i class="fab fa-facebook-f"></i>#}
+{#    </a>#}
+{#    <a type="button" class="light-blue-text mx-2">#}
+{#        <i class="fab fa-twitter"></i>#}
+{#    </a>#}
+{#    <a type="button" class="light-blue-text mx-2">#}
+{#        <i class="fab fa-linkedin-in"></i>#}
+{#    </a>#}
+{#    <a type="button" class="light-blue-text mx-2">#}
+{#        <i class="fab fa-github"></i>#}
+{#    </a>#}
+    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">{{ 'form.submit.close'|trans }}</button>
+</div>
+{{ form_end(registrationForm) }}

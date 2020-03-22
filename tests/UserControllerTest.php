@@ -4,6 +4,7 @@ namespace App\Tests;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\BrowserKit\Cookie;
@@ -14,7 +15,7 @@ class UserControllerTest extends WebTestCase
 {
     private $client;
     /**
-     * @var \Doctrine\ORM\EntityManager|object|null
+     * @var EntityManager|object|null
      */
     private $manager;
 
