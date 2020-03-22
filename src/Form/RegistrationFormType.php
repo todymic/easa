@@ -23,7 +23,7 @@ class RegistrationFormType extends UserType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'form.register.agreeTerms',
                     ]),
                 ],
                 'label' => 'form.checkbox.agreeTerms'
@@ -34,7 +34,7 @@ class RegistrationFormType extends UserType
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'form.register.password.notBlank',
                     ]),
                     new Length([
                         'min' => 6,

@@ -16,46 +16,14 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('lastname', null, [
-                'attr' => [
-                    'placeholder' => 'form.input.lastname'
-                ]
-            ])
-            ->add('firstname', null,[
-                'attr' => [
-                    'placeholder' => 'form.input.firstname'
-                ]
-            ])
-            ->add('adresse', null,[
-                'attr' => [
-                    'placeholder' => 'form.input.adresse'
-                ]
-            ])
-            ->add('city', null,[
-                'attr' => [
-                    'placeholder' => 'form.input.city'
-                ]
-            ])
-            ->add('country', null,[
-                'attr' => [
-                    'placeholder' => 'form.input.country'
-                ]
-            ])
-            ->add('phone', null,[
-                'attr' => [
-                    'placeholder' => 'form.input.phone'
-                ]
-            ])
-            ->add('email', EmailType::class,[
-                'attr' => [
-                    'placeholder' => 'form.input.email'
-                ]
-            ])
-            ->add('password', PasswordType::class,[
-                'attr' => [
-                    'placeholder' => 'form.input.firstname'
-                ]
-            ])
+            ->add('lastname')
+            ->add('firstname')
+            ->add('adresse')
+            ->add('city')
+            ->add('country')
+            ->add('phone')
+            ->add('email', EmailType::class)
+            ->add('password', PasswordType::class)
             ->add('roles', ChoiceType::class, [
                 'multiple' => true,
                 'expanded' => true, // render check-boxes
