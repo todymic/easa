@@ -21,14 +21,17 @@ form:
     github: 'Github'
     linkdin: 'Linkdin'
     logout: 'Se déconnecter'
+    here: 'Ici'
   submit:
     login: 'Connexion'
     logout: 'Déconnexion'
     signup: 'Enregistrer'
+    close: 'Fermer'
   text:
     not_membre: 'Pas encore inscrit?'
     sign_with: 'Ou se connecter avec'
     signup_with: "Ou s'enregistrer avec"
+    already_member: "Déjà membre?"
   checkbox:
     agreeTerms: "J'accepte les termes et conditions de l'utilisation du site"
 link:
