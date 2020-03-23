@@ -3,6 +3,6 @@ form:
     agreeTerms: "Vous devez accepter notre potilique de contrat"
     password:
       notBlank: "Veuillez entrer votre mot de passe"
-      length: "Le mote de passe doit contenir au moins %nbr% caractères"
+      length: "Le mot de passe doit contenir au moins 6 caractères"
       confirmNotMatch: "le mot de passe de correspond pas"
 

@@ -8,6 +8,8 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
@@ -50,8 +52,9 @@ class RegistrationFormType extends UserType
                 ],
             ]);
 
-        $builder->remove('password');
-        $builder->remove('roles');
+        /* Remove password and roles field parent*/
+        $builder->remove('password')
+                ->remove('roles');
     }
 
     public function configureOptions(OptionsResolver $resolver)
