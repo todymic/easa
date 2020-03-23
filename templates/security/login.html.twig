@@ -11,6 +11,22 @@
             </div>
         {% endif %}
 
+        <div class="text-center">
+            <p>{{ 'form.text.sign_with'|trans }}:</p>
+            <a type="button" class="btn-floating btn-sm btn-fb mx-2" data-toggle="tooltip" title="{{ 'form.link.facebook'|trans }}">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a type="button" class="btn-floating btn-sm btn-google-blue mx-2" data-toggle="tooltip" title="{{ 'form.link.gmail'|trans }}">
+                <i class="fab fa-google"></i>
+            </a>
+            <a type="button" class="btn-floating btn-sm btn-li mx-2" data-toggle="tooltip" title="{{ 'form.link.linkdin'|trans }}">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a type="button" class="btn-floating btn-sm btn-git mx-2" data-toggle="tooltip" title="{{ 'form.link.github'|trans }}">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
         <div class="md-form form-sm mb-5">
             <i class="fas fa-envelope prefix"></i>
             <input type="email" value="{{ last_username }}" name="email"  id="inputEmail" class="form-control form-control-sm validate" required>
@@ -62,6 +78,12 @@
         {#                </a>#}
         {#            </div>#}
 
+            <div class="text-center">
+                <p>{{ 'form.text.not_membre'|trans }}
+                    <a href="#">{{ 'form.link.register'|trans }}</a>
+                </p>
+            </div>
+        </form>
     </div>
     <div class="modal-footer">
         <div class="options text-center text-md-right mt-1">

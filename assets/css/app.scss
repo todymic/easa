@@ -1,16 +1,19 @@
-@import "~@fortawesome/fontawesome-free";
-@import "~mdbootstrap/css/bootstrap.min.css";
-@import "~mdbootstrap/css/mdb.min.css";
-@import "~mdbootstrap/css/style.css";
-@import "~mdbootstrap/css/addons/datatables.min.css";
-@import "~mdbootstrap/css/addons/datatables-select.min.css";
-
 @import "helper/variable";
+
+@import "~@fortawesome/fontawesome-free";
+@import "~bootstrap/scss/bootstrap";
+@import "~mdbootstrap/scss/mdb-free";
+@import "~mdbootstrap/scss/addons/datatables";
+@import "~mdbootstrap/scss/addons/datatables-select";
+@import "~mdbootstrap/scss/addons/directives";
+@import "~mdbootstrap/scss/addons/hierarchical-display";
+@import "~mdbootstrap/scss/addons/flag";
+@import "~mdbootstrap/scss/addons/rating";
+
+
+@import "base/mixins";
+@import "base/base";
 @import "components/button";
 @import "components/dropdown";
-
-body {
-    background-color: #FFFFFF;
-}
 
 
