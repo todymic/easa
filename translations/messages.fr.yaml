@@ -1,9 +1,16 @@
 form:
   sign:
-    in: "Connectez-vous"
+    in: "Connexion"
+    up: "Inscription"
   input:
     email: 'E-mail'
     password: 'Mot de passe'
+    lastname: 'Nom'
+    firstname: 'Prénom'
+    city: 'Ville'
+    country: 'Pays'
+    phone: 'Télephone'
+    adresse: 'Adresse'
   label:
     remember_me: 'Se souvenir de moi'
   link:
@@ -13,8 +20,26 @@ form:
     gmail: 'Gmail'
     github: 'Github'
     linkdin: 'Linkdin'
+    logout: 'Se déconnecter'
+    here: 'Ici'
   submit:
     login: 'Connexion'
+    logout: 'Déconnexion'
+    signup: 'Enregistrer'
+    close: 'Fermer'
   text:
     not_membre: 'Pas encore inscrit?'
-    sign_with: 'ou se connecter avec'
+    sign_with: 'Ou se connecter avec'
+    signup_with: "Ou s'enregistrer avec"
+    already_member: "Déjà membre?"
+  checkbox:
+    agreeTerms: "J'accepte les termes et conditions de l'utilisation du site"
+link:
+  user:
+    profil: 'Mon Profil'
+  register: "S'inscrire"
+  sign:
+    out: 'Déconnexion'
+    in: 'Connexion'
+  create:
+    user: 'Créer nouvel utilisateur'

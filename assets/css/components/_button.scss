@@ -5,69 +5,99 @@
 .btn-fb {
   color: #fff;
   background-color: #3b5998 !important;
-
-  &:hover {
-    color: #fff;
-    background-color: #4264aa;
-  }
 }
 
-.btn-sm {
-  padding: .25rem .5rem;
-  font-size: .875rem;
-  line-height: 1.5;
-  border-radius: .2rem;
+.btn-li {
+  color: #fff;
+  background-color: #0082ca !important;
 }
 
-.waves-effect {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+.btn-tw {
+  color: #fff;
+  background-color: #55acee !important;
+}
+
+.btn-git {
+  color: #fff;
+  background-color: #333 !important;
+}
+
+.btn-google-blue {
+  color: #fff;
+  background-color: #4285F4 !important;
+}
+.btn-google-green {
+  color: #fff;
+  background-color: #34A853 !important;
+}
+.btn-google-yellow {
+  color: #fff;
+  background-color: #FBBC05 !important;
+}
+.btn-google-red {
+  color: #fff;
+  background-color: #EA4335 !important;
 }
 
 .btn-floating {
   position: relative;
   z-index: 1;
   display: inline-block;
-  padding: 0;
   margin: 10px;
   overflow: hidden;
   vertical-align: middle;
   cursor: pointer;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  width: 47px;
-  height: 47px;
+  border-radius: $border-radius-circle;
+  @include box-shadows($z-depth-1-half);
+  @include transition-main($transition-basic);
+  @include make-size($btn-floating-basic-width, $btn-floating-basic-height);
+  line-height: $btn-floating-basic-line-height;
+  text-align: center;
 
   &:hover {
-    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: $z-depth-2;
   }
 
-  svg {
+  svg,i {
+    font-size: $btn-floating-font-size-basic;
+    line-height: $btn-floating-basic-line-height;
+
     display: inline-block;
-    width: inherit;
+    width: auto;
     color: #fff;
     text-align: center;
   }
 
-  .btn-sm {
-    width: 36.15385px;
-    height: 36.15385px;
+  &.btn-lg {
+    @include make-size($btn-floating-lg-width, $btn-floating-lg-height);
+    line-height: $btn-floating-lg-line-height;
 
-    svg {
-      font-size: .96154rem;
-      line-height: 36.15385px;
+    svg,i {
+      font-size: $btn-floating-font-size-lg;
+      line-height: $btn-floating-lg-line-height;
     }
   }
+
+  &.btn-md {
+    @include make-size($btn-floating-md-width, $btn-floating-md-height);
+    line-height: $btn-floating-md-line-height;
+
+    svg,i {
+      font-size: $btn-floating-font-size-md;
+      line-height: $btn-floating-md-line-height;
+    }
+  }
+
+  &.btn-sm {
+    @include make-size($btn-floating-sm-width, $btn-floating-sm-height);
+    line-height: $btn-floating-sm-line-height;
+
+    svg,i {
+      font-size: $btn-floating-font-size-sm;
+      line-height: $btn-floating-sm-line-height;
+    }
+  }
+
 }
 
 

@@ -14,7 +14,11 @@ import '@fortawesome/fontawesome-free/js/all';
 
 import 'mdbootstrap/js/popper';
 import 'mdbootstrap/js/bootstrap';
+import 'mdbootstrap/js/addons/datatables.min';
+import 'mdbootstrap/js/addons/datatables-select.min';
 
 import './tooltip';
+import './datatable';
 
-import 'mdbootstrap/js/mdb';
+// import 'mdbootstrap/js/mdb';
+

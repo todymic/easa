@@ -1,0 +1,4 @@
+@mixin make-size($width, $height) {
+  width: $width;
+  height: $height;
+}

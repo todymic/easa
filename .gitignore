@@ -26,3 +26,6 @@ yarn-error.log
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+### Ide file ignores
+/.idea/
