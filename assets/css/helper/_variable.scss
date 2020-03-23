@@ -10,5 +10,27 @@ $secondary-color: $purple-base;
 $secondary: $purple-base;
 
 $link-color: #4caf50;
+$link-hover-color: darken($link-color, 15%);
+
+$btn-floating-font-size-basic: 1.3rem;
+$btn-floating-font-size-lg: 1.8rem;
+$btn-floating-font-size-md: 1.5rem;
+$btn-floating-font-size-sm: 1.1rem;
+
+$btn-floating-basic-width: 3rem !default;
+$btn-floating-basic-height: 3rem !default;
+$btn-floating-basic-line-height: 3.2rem !default;
+
+$btn-floating-lg-width: 4rem !default;
+$btn-floating-lg-height: 4rem !default;
+$btn-floating-lg-line-height: 3.5rem !default;
+
+$btn-floating-md-width: 3.5rem !default;
+$btn-floating-md-height: 3.5rem !default;
+$btn-floating-md-line-height: 3.85rem !default;
+
+$btn-floating-sm-width: 2.5rem !default;
+$btn-floating-sm-height: 2.5rem !default;
+$btn-floating-sm-line-height: 2.1rem !default;
 
 $image-path: "/assets/img";

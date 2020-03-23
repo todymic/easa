@@ -1,3 +1,13 @@
 body {
   background-color: #FFFFFF;
 }
+
+a:not([role]) {
+  &:hover {
+    color: $link-hover-color !important;
+    text-decoration: $link-hover-decoration;
+  }
+}
+html {
+  font-size: 14px;
+}
