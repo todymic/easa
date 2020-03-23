@@ -6,8 +6,10 @@ use App\Entity\User;
 use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,8 +22,8 @@ class UserType extends AbstractType
             ->add('firstname')
             ->add('adresse')
             ->add('city')
-            ->add('country')
-            ->add('phone')
+            ->add('country', CountryType::class)
+            ->add('phone', TelType::class)
             ->add('email', EmailType::class)
             ->add('password', PasswordType::class)
             ->add('roles', ChoiceType::class, [

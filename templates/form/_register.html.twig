@@ -1,0 +1,15 @@
+
+{% block checkbox_row %}
+<div class="d-flex justify-content-between mb-4">
+    <div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input"
+                   id="{{ form.vars.id }}"
+                   name="{{ form.vars.full_name }}"
+                   value="{{ form.vars.value }}"
+                   required>
+            <label class="custom-control-label" for="{{ form.vars.id }}">{{ 'form.checkbox.agreeTerms'|trans }}</label>
+        </div>
+    </div>
+</div>
+{% endblock %}

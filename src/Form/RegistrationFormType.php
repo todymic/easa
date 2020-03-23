@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -18,6 +19,7 @@ class RegistrationFormType extends UserType
     {
         parent::buildForm($builder, $options);
 
+
         $builder
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -28,9 +30,12 @@ class RegistrationFormType extends UserType
                 ],
                 'label' => 'form.checkbox.agreeTerms'
             ])
-            ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+            ->add('plainPassword', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'invalid_message' => 'form.register.password.confirmNotMatch',
+                'required' => true,
+                'first_options'  => ['label' => 'form.input.password'],
+                'second_options' => ['label' => 'form.input.repeatpassword'],
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
@@ -38,7 +43,7 @@ class RegistrationFormType extends UserType
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'form.register.password.length',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

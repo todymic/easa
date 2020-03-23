@@ -5,6 +5,7 @@ form:
   input:
     email: 'E-mail'
     password: 'Mot de passe'
+    repeatpassword: 'Confirmation mot de passe'
     lastname: 'Nom'
     firstname: 'Prénom'
     city: 'Ville'
@@ -32,6 +33,8 @@ form:
     sign_with: 'Ou se connecter avec'
     signup_with: "Ou s'enregistrer avec"
     already_member: "Déjà membre?"
+    valid: ""
+    wrong: "erreur"
   checkbox:
     agreeTerms: "J'accepte les termes et conditions de l'utilisation du site"
 link:
