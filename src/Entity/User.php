@@ -6,10 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @Vich\Uploadable
  */
 class User implements UserInterface
 {
@@ -78,9 +81,26 @@ class User implements UserInterface
      */
     private $agreeTermsAt;
 
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $civility;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime",nullable=true)
+     */
+    private $updatedAt;
+
+
     public function __construct()
     {
         $this->roles[] = "ROLE_USER";
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -235,5 +255,41 @@ class User implements UserInterface
 
     public function agreeTerms() {
         return $this->agreeTermsAt = new \DateTime();
+    }
+
+    public function getCivility(): ?string
+    {
+        return $this->civility;
+    }
+
+    public function setCivility(string $civility): self
+    {
+        $this->civility = $civility;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }
