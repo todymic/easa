@@ -47,7 +47,7 @@
         "mdbootstrap": "^4.14.1",
         "node-waves": "^0.7.6",
         "popper.js": "^1.16.1",
-        "underscore": "^1.9.2",
+        "underscore": "^1.12.1",
         "wow.js": "^1.2.2"
     },
     "browserslist": [
